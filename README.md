@@ -135,3 +135,85 @@ add foreign key (cod_curso) REFERENCES Curso (cod_curso)
 
 Agora é possível ver o modelo lógico no campo **Desenhador**
 ![image](https://user-images.githubusercontent.com/112867913/215531858-9c5b5871-511d-4926-a82d-aac23130be94.png)
+
+## Inserindo dados nas tabelas
+Para povoar as tabelas, é utilizado o comando ```insert into nome_da_tabela (atributo, atributo, atributo) Values (valores, valores, valores) ```
+
+```
+insert into Aluno (Cod_Aluno, Cod_Curso, Matrícula, Nome, Endereço, Telefone)
+values
+(null, null, 2100, 'Floriano Menezes', 'Rua B Lote 34', 21987863454),
+(null, null, 2100, 'Mariana Sousa', 'Rua A Lote 210', 21987457884),
+(null, null, 2100, 'Silvia Martins', 'Rua C Lote 540', 21974756689)
+
+insert into curso (Cod_Curso, Nome, Tipo)
+values
+(null, 'JavaScript', 'Programação'),
+(null, 'C#', 'Microsoft'),
+(null, 'JAVAweb', 'JAVA')
+
+insert into professor (Cod_Prof, Nome, Sexo, Especialidade)
+values
+(null, 'Marcelo Leite', 'M', 'Físico'),
+(null, 'Tatiane Rosestolato', 'F', 'Tecnólogo ADM'),
+(null, 'Carlos Lins', 'M', 'Cientista da Computação')
+```
+
+# FROM, WHERE, SELECT
+Insira em SQL os dados a seguir um de cada vez (separados por uma linha em branco).
+
+```
+CREATE DATABASE Competição
+
+CREATE TABLE torneios(
+nome varchar(30),
+vitorias real,
+melhor real,
+tamanho real
+)
+
+INSERT INTO torneios (nome, vitorias, melhor, tamanho)
+VALUES
+('Dolly', '7', '245', '8.5'),
+('Etta', '4', '283', '9'),
+('Irma', '9', '266', '7'),
+('Barbara', '2', '197', '7.5'),
+('Gladys', '13', '273', '8')
+```
+
+**Select:** Utilizado para buscar um determinado dado no BD
+
+- Se digitarmos o seguinte comando, irá retornar a tabela inteira criada.
+
+```
+SELECT * from torneios
+```
+![image](https://user-images.githubusercontent.com/112867913/215899257-7be2faf0-81ba-49d3-930f-ae0f38abc82b.png)
+
+------------------------------
+
+Crie uma nova tabela dentro do BD:
+
+```
+CREATE TABLE refeicoes(
+nome varchar(30),
+data_nascimento date,
+entrada varchar(30),
+acompanhamento varchar(30),
+sobremesa varchar(30)
+)
+
+INSERT INTO refeicoes (nome, data_nascimento, entrada, acompanhamento, sobremesa)
+VALUES 
+('Dolly', '1946-01-19', 'steak', 'salad', 'cake'),
+('Etta', '1938-01-25', 'chicken', 'fries', 'ice cream'),
+('Irma', '1941-02-18', 'tofu', 'fries', 'cake'),
+('Barbara', '1948-12-25', 'tofu', 'salad', 'ice cream'),
+('Gladys', '1944-05-28', 'steak', 'fries', 'ice cream')
+
+```
+
+Select NOME from refeicoes = Selecionar a coluna NOME da tabela refeicoes. Pode ser mais de uma coluna, desde que separada por vírgula: ```Select nome, entrada from refeicoes```
+
+![image](https://user-images.githubusercontent.com/112867913/215901264-e69b5c4e-b8b5-44a4-93b5-ccc02dffa084.png)
+
